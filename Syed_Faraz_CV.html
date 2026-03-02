@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Faraz Ibne Saleem – CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f1b2d;
+    --accent: #c8963e;
+    --light: #f5f2ee;
+    --sidebar-bg: #0f1b2d;
+    --text-main: #1a1a1a;
+    --text-muted: #555;
+    --rule: #ddd;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e8e4de;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .cv {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    width: 900px;
+    min-height: 1100px;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+
+  .sidebar {
+    background: var(--sidebar-bg);
+    color: #d4d0c8;
+    padding: 48px 28px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .sidebar-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 18px;
+  }
+
+  .sidebar-name span {
+    display: block;
+    font-size: 11px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .sidebar-section-title {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .sidebar-block { display: flex; flex-direction: column; gap: 10px; }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .contact-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.8;
+  }
+
+  .contact-value {
+    font-size: 12.5px;
+    color: #c8c4bc;
+    font-weight: 300;
+    word-break: break-all;
+  }
+
+  .contact-value a {
+    color: #c8c4bc;
+    text-decoration: none;
+  }
+  .contact-value a:hover { color: var(--accent); }
+
+  .objective-text {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #b0aca4;
+    font-weight: 300;
+  }
+
+  .skills-group { margin-bottom: 12px; }
+  .skills-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .skills-value {
+    font-size: 12px;
+    color: #b0aca4;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+
+  .main {
+    padding: 48px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .main-header {
+    border-bottom: 3px solid var(--navy);
+    padding-bottom: 18px;
+  }
+
+  .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .main-subtitle {
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.4;
+  }
+
+  .edu-item {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .edu-date {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    font-weight: 500;
+    min-width: 130px;
+    text-transform: uppercase;
+    padding-top: 3px;
+  }
+  .edu-content {}
+  .edu-degree {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+  .edu-institution {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .project-card {
+    border: 1px solid #e0dbd3;
+    padding: 16px;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .project-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(200,150,62,0.1); }
+  .project-card:hover::before { opacity: 1; }
+
+  .project-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .project-tech {
+    font-size: 10.5px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+<div class="cv">
+
+ 
+  <aside class="sidebar">
+    <div class="sidebar-name">
+      <span>
+      </span>
+      <br></br>
+      
+    </div>
+
+    <div>
+      <div class="sidebar-section-title">Objective</div>
+      <p class="objective-text">Motivated BS Computer Science student at Air University. Seeking practical experience to apply and develop technical expertise.</p>
+    </div>
+
+    <div>
+      <div class="sidebar-section-title">Contact</div>
+      <div class="sidebar-block">
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+92-300-8555931</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><a href="mailto:farazisaleem11@gmail.com">farazisaleem11@gmail.com</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value"><a href="https://linkedin.com" target="_blank">Syed Faraz | LinkedIn</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sidebar-section-title">Skills</div>
+      <div class="skills-group">
+        <div class="skills-label">Programming</div>
+        <div class="skills-value">C++, Java, JavaScript, HTML, CSS, Dart, Flutter</div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-label">Tools</div>
+        <div class="skills-value">GitHub, Visual Studio, IntelliJ, SSMS, MongoDB, Android Studio</div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-label">Databases</div>
+        <div class="skills-value">SQL, NoSQL</div>
+      </div>
+    </div>
+  </aside>
+
+ 
+  <main class="main">
+    <div class="main-header">
+      <div class="main-title">Syed Faraz Ibne Saleem</div>
+      <div class="main-subtitle">BS Computer Science &nbsp;·&nbsp; Air University, Islamabad</div>
+    </div>
+
+   
+    <section>
+      <div class="section-title">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-date">Sep 2024 – Aug 2028</div>
+        <div class="edu-content">
+          <div class="edu-degree">BS Computer Science</div>
+          <div class="edu-institution">Air University &nbsp;|&nbsp; Islamabad, PK</div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-date">Sep 2022 – Jul 2024</div>
+        <div class="edu-content">
+          <div class="edu-degree">Intermediate</div>
+          <div class="edu-institution">IMCB F-10/3 &nbsp;|&nbsp; Islamabad, PK</div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-date">Sep 2020 – Jun 2022</div>
+        <div class="edu-content">
+          <div class="edu-degree">Matriculation</div>
+          <div class="edu-institution">IMCB F-10/3 &nbsp;|&nbsp; Islamabad, PK</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Academic Projects</div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-name">Banking Management System</div>
+          <div class="project-tech">C++ &nbsp;·&nbsp; Programming Fundamentals</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Baker Co.</div>
+          <div class="project-tech">Website &nbsp;·&nbsp; HTML &nbsp;·&nbsp; CSS</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Twitter Clone</div>
+          <div class="project-tech">C++ &nbsp;·&nbsp; Java &nbsp;·&nbsp; OOP</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Student Management System</div>
+          <div class="project-tech">SQL &nbsp;·&nbsp; SSMS</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">VelocityGo – Ride Hailing App</div>
+          <div class="project-tech">C++ &nbsp;·&nbsp; SFML &nbsp;·&nbsp; Data Structures</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">VelocityGo – Mobile App</div>
+          <div class="project-tech">Flutter &nbsp;·&nbsp; Dart &nbsp;·&nbsp; Firebase &nbsp;·&nbsp; Mobile Computing</div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
